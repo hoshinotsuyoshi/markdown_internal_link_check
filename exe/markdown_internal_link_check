@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "markdown_internal_link_check"
+require "optparse"
+
+option_parser = OptionParser.new
+option_parser.on(
+  "-v",
+  "--version",
+  "Show version number"
+) do
+  puts MarkdownInternalLinkCheck::VERSION
+  exit
+end
+option_parser.parse!(ARGV)
+
+root = ARGV.shift
+reporter = nil
+_, exit_code = MarkdownInternalLinkCheck::Executor.new.execute(root:, reporter:)
+exit exit_code

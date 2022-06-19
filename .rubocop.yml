@@ -1,0 +1,40 @@
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  - rubocop-performance
+  - rubocop-rubycw
+
+AllCops:
+  TargetRubyVersion: 3.1
+  DisabledByDefault: true
+  Exclude:
+    - "gems/**/*"
+    - "bin/*"
+  NewCops: enable
+  SuggestExtensions: false
+
+Bundler:
+  Enabled: true
+
+Gemspec:
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Lint:
+  Enabled: true
+
+Performance:
+  Enabled: true
+
+Rubycw:
+  Enabled: true
+
+Security:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
